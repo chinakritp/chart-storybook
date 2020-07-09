@@ -1,0 +1,107 @@
+@import '../../../scss/variables';
+
+.wrapper {
+  :global .subtitle {
+    color: $primary--color;
+    font-size: 12px;
+    top: 0;
+
+    &:global(.absolute) {
+      position: absolute;
+    }
+
+    :global .highlight {
+      font-family: $font-family--bold;
+      padding-right: 5px;
+    }
+
+    &:global(.multiple-line .highlight) {
+      display: block;
+    }
+  }
+}
+
+.chart {
+  :global .c3-chart-bars .c3-bar,
+  :global .c3-chart:hover .c3-bar {
+    fill-opacity: 0.3;
+  }
+
+  :global .c3-chart-bars .focus,
+  :global .c3-chart-bars .c3-bar._expanded_ {
+    fill-opacity: 1;
+  }
+
+  :global .c3-axis .tick,
+  :global .c3-legend-item {
+    fill: $font-color--accent-2;
+  }
+
+  // reference line
+  :global .c3-grid-lines .ref-line > line {
+    stroke: $primary--color;
+    stroke-dasharray: 3;
+  }
+
+  // donut title
+  :global .c3-chart-arcs-title {
+    fill: $primary--color;
+    font-family: $font-family--bold;
+    font-size: 14px;
+
+    :global .unit {
+      font-family: $font-family--primary;
+      font-size: 10px;
+    }
+  }
+
+  // chart tooltip
+  :global .c3-tooltip-container {
+    :global strong {
+      font-family: $font-family--bold;
+    }
+
+    :global .c3-tooltip td > br {
+      content: ' ';
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    :global .c3-tooltip td.name {
+      font-family: $font-family--bold;
+      vertical-align: top;
+    }
+
+    :global .c3-tooltip td.value {
+      text-align: left;
+    }
+  }
+
+  // chart icon on scale chart
+  :global .c3-chart-text .c3-text {
+    fill: rgb(255, 255, 255) !important;
+    font-family: 'Material Icons' !important, sans-serif;
+    font-size: 15px;
+    transform: translate(10px, 22px) !important;
+  }
+
+  // chart grid line axis
+  :global .c3-grid-lines {
+    opacity: 0.3;
+  }
+}
+
+.remark {
+  color: $color-gray-600;
+  font-family: $font-family--bold;
+  font-size: 8px;
+
+  .value {
+    font-family: $font-family--primary;
+    margin-left: 2px;
+  }
+}
+
+.singleView {
+  margin-bottom: 28px;
+}

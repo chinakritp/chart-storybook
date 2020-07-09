@@ -1,0 +1,5 @@
+export { default } from './chart'
+export { default as BarChart } from './charts/bar-chart'
+export { default as DonutChart } from './charts/donut-chart'
+export { default as PieChart } from './charts/pie-chart'
+export { default as ScaleChart } from './charts/scale-chart'

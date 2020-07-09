@@ -1,0 +1,137 @@
+@import 'variables';
+
+@mixin box-shadow {
+  box-shadow: 1px 1px 5px #bbb;
+}
+
+@mixin icon-button {
+  cursor: pointer;
+  display: inline-block;
+  padding: 0;
+  transition: 0.3s;
+  > i {
+    @include generate-square(28px);
+    background: {
+      position: center;
+      repeat: no-repeat;
+      size: 24px;
+    }
+    transition: 0.3s;
+  }
+  &.active,
+  &:hover {
+    background: $active-bg--color;
+  }
+}
+
+@mixin padding-x($value) {
+  padding-left: $value;
+  padding-right: $value;
+}
+
+@mixin padding-y($value) {
+  padding-bottom: $value;
+  padding-top: $value;
+}
+
+@mixin normalize-button {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+}
+
+@mixin reset-button {
+  @include normalize-button;
+
+  &:disabled {
+    cursor: default;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}
+
+@mixin reset-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin align-center {
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin align-middle {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin vertical-center {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin truncate-string($width: 200px) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: $width;
+}
+
+@mixin generate-bkg-img($img-name, $img-2x: true, $img-ext: 'png') {
+  $img-quality: '';
+
+  @if $img-2x {
+    $img-quality: '@2x';
+  }
+
+  background-image: url('#{$img-url}/#{$img-name}#{$img-quality}.#{$img-ext}');
+}
+
+@mixin generate-icon($icon-path, $icon-name, $icon-size, $icon-type: 'png') {
+  background: {
+    color: transparent;
+    image: url('#{$icon-path}/#{$icon-name}.#{$icon-type}');
+    position: 0 0;
+    repeat: no-repeat;
+    size: $icon-size;
+  }
+}
+
+@mixin generate-square($dimension, $display: block) {
+  display: $display;
+  height: $dimension;
+  width: $dimension;
+}
+
+@mixin generate-circle($dimension, $display: block) {
+  border-radius: 50%;
+  display: $display;
+  height: $dimension;
+  width: $dimension;
+}
+
+@mixin generate-fullscreen($absolute: true) {
+  height: 100%;
+  width: 100%;
+
+  @if $absolute {
+    position: absolute;
+  }
+}
+
+@mixin space-between($value) {
+  > :not(:last-child) {
+    margin-right: $value;
+  }
+
+  > :not(:first-child) {
+    margin-left: $value;
+  }
+}

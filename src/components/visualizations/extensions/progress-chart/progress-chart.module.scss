@@ -1,0 +1,46 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins';
+
+.subtitle {
+  color: $color-primary-800;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+
+  .compare,
+  .main {
+    display: inline-flex;
+    font-size: 12px;
+
+    .label {
+      font-family: $font-family--bold;
+    }
+
+    .value {
+      font-family: $font-family--primary;
+      margin: 0 0 5px 5px;
+    }
+  }
+
+  &.isCompare {
+    .compare,
+    .main {
+      display: block;
+      padding: 10px 0;
+      width: 50%;
+
+      .value {
+        margin: 5px 0 0;
+      }
+    }
+
+    .compare {
+      color: $color-orange-500;
+    }
+
+    .main {
+      color: $color-primary-800;
+    }
+  }
+}

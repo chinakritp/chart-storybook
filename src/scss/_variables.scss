@@ -1,0 +1,90 @@
+@import 'functions';
+
+// Base color
+$color-base-black: #000;
+$color-base-transparent: transparent;
+$color-base-white: #fff;
+
+// Scaled color
+$color-primary-50: #e5f2ff;
+$color-primary-100: #c0deff;
+$color-primary-200: #99caff;
+$color-primary-300: #72b5ff;
+$color-primary-400: #5ba4ff;
+$color-primary-500: #4d95ff;
+$color-primary-600: #4c86f4;
+$color-primary-700: #4973e0;
+$color-primary-800: #4662cd;
+$color-primary-900: #4042ac;
+
+$color-secondary-50: #e0f7fa;
+$color-secondary-100: #b2ecf2;
+$color-secondary-200: #80dfea;
+$color-secondary-300: #4dd2e1;
+$color-secondary-400: #25c8da;
+$color-secondary-500: #00bed4;
+$color-secondary-600: #00aec1;
+$color-secondary-700: #0099a7;
+$color-secondary-800: #008590;
+$color-secondary-900: #006265;
+
+$color-gray-50: #f2f2f2;
+$color-gray-100: #ededed;
+$color-gray-200: #ddd;
+$color-gray-300: #d8d8d8;
+$color-gray-400: #b7b7b7;
+$color-gray-500: #999;
+$color-gray-600: #717171;
+$color-gray-700: #5d5d5d;
+$color-gray-800: #3f3f3f;
+$color-gray-900: #1f1f1f;
+
+// State color
+$color-state-warning: #f9eb0b;
+$color-state-success: #3fc9cc;
+$color-state-info: #4662cd;
+$color-state-error: #d00265;
+
+// Additional colors
+$color-orange-100: #ffba8a;
+$color-orange-200: #ff9c57;
+$color-orange-300: #ff7e24;
+$color-orange-500: #f06300;
+$color-orange-700: #bd4e00;
+
+$color-green-500: #31d165;
+
+$primary--color: #425ede;
+$primary--color--light: #4c86f4;
+$secondary--color: #f06300;
+
+// Background color
+$active-bg--color: #e1f5fc;
+
+// Font color
+$font-color--accent-1: #333;
+$font-color--accent-2: #666;
+
+// Font family
+$font-family--primary: 'IBMPlexThai-Regular', sans-serif;
+$font-family--light: 'IBMPlexThai-Light', sans-serif;
+$font-family--bold: 'IBMPlexThai-SemiBold', sans-serif;
+
+// Helper
+$border-color: #eee;
+
+// Shadow
+$shadow-depth-1: generate-shadows(0 1px 1px 0, 0 2px 1px -1px, 0 1px 3px 0);
+$shadow-depth-2: generate-shadows(0 2px 2px 0, 0 3px 1px -2px, 0 1px 5px 0);
+$shadow-depth-3: generate-shadows(0 3px 4px 0, 0 3px 3px -2px, 0 1px 8px 0);
+$shadow-depth-4: generate-shadows(0 4px 5px 0, 0 1px 10px 0, 0 2px 4px -1px);
+$shadow-depth-5: generate-shadows(0 6px 10px 0, 0 1px 18px 0, 0 3px 5px -1px);
+$shadow-depth-6: generate-shadows(0 8px 10px 1px, 0 3px 14px 2px, 0 5px 5px -3px);
+$shadow-depth-7: generate-shadows(0 9px 12px 1px, 0 3px 16px 2px, 0 5px 6px -3px);
+$shadow-depth-8: generate-shadows(0 12px 17px 2px, 0 5px 22px 4px, 0 7px 8px -4px);
+$shadow-depth-9: generate-shadows(0 16px 24px 2px, 0 6px 30px 5px, 0 8px 10px -5px);
+$shadow-depth-10: generate-shadows(0 24px 38px 3px, 0 9px 46px 8px, 0 11px 15px -7px);
+
+// URL
+$img-url: '../assets/images';
+$font-url: '../assets/fonts';

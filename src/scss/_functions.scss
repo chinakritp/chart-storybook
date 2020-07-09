@@ -1,0 +1,3 @@
+@function generate-shadows($base, $middle, $top) {
+  @return $base rgba(0, 0, 0, 0.14), $middle rgba(0, 0, 0, 0.12), $top rgba(0, 0, 0, 0.2);
+}

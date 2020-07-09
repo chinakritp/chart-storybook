@@ -1,0 +1,391 @@
+@import 'variables';
+@import 'mixins';
+
+// Styling panel for single view
+#analytics-panel {
+  background: rgba(255, 255, 255, 0.25);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 600px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: translateX(100%);
+  transition: 0.4s;
+  width: 100%;
+  z-index: 3;
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  .cards {
+    margin: 0 10px;
+  }
+
+  .card-wrapper {
+    margin: 0 -10px;
+  }
+
+  .panel-info {
+    overflow-y: auto;
+    padding: 10px 0;
+  }
+}
+
+.cards {
+  overflow: hidden;
+
+  > span:last-of-type > .card {
+    margin-bottom: 15px;
+  }
+}
+
+.card {
+  @include box-shadow;
+
+  background: $color-base-white;
+  min-height: 200px;
+  padding: 10px;
+  position: relative;
+
+  h3 {
+    color: #888;
+    font: {
+      family: $font-family--primary;
+      size: 14px;
+    }
+
+    margin: 0 0 3px;
+  }
+
+  h4 {
+    font: {
+      family: $font-family--primary;
+    }
+
+    margin: 0 0 5px;
+  }
+
+  .main-content {
+    height: 140px;
+    padding-top: 8px;
+    text-align: center;
+
+    .icon {
+      &-display {
+        display: inline-block;
+        padding: 3px 0;
+        transition: 0.3s;
+      }
+
+      &-box {
+        @include generate-square(56px);
+        background: {
+          image: url('../assets/images/icon-box.png');
+          position: center;
+          repeat: no-repeat;
+          size: 50px;
+        }
+      }
+    }
+  }
+
+  &-protector {
+    @include generate-square(100%);
+
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 2;
+  }
+}
+
+.rv-radial-chart,
+.rv-discrete-color-legend {
+  display: inline-block;
+}
+
+.compare-panel .cards {
+  max-height: calc(100% - 195px);
+  overflow-y: auto;
+
+  .card {
+    border-bottom: 1px solid #eee;
+    box-shadow: none;
+    margin: 0 15px;
+  }
+}
+
+// customize tooltip text
+#analytics-panel,
+.compare-panel {
+  .recharts-default-tooltip {
+    @include box-shadow;
+
+    border: 0 !important;
+    font-size: 10px;
+    min-width: 80px;
+  }
+
+  .recharts-tooltip-label {
+    font-family: $font-family--bold;
+  }
+
+  .recharts-tooltip-item {
+    display: inline-flex;
+    color: $color-base-black !important;
+    margin-top: 10px;
+    padding: 0 !important;
+    vertical-align: middle;
+  }
+
+  .recharts-tooltip-item-name {
+    font-size: 0;
+  }
+
+  .recharts-tooltip-item-value {
+    font-family: $font-family--primary;
+  }
+}
+
+#analytics-panel {
+  .card {
+    .pie-chart {
+      .recharts-tooltip-item {
+        margin: 0;
+      }
+
+      .recharts-tooltip-item-name {
+        font: {
+          family: $font-family--bold;
+          size: 10px;
+        }
+      }
+    }
+  }
+}
+
+.stacked-active,
+.compare-panel {
+  .recharts-tooltip-item {
+    &:before {
+      @include generate-square(10px);
+
+      content: '';
+      float: left;
+    }
+
+    &:first-child:before {
+      background-color: $primary--color;
+    }
+  }
+
+  .recharts-tooltip-item-value {
+    float: right;
+  }
+}
+
+.compare-panel {
+  .recharts-tooltip-item {
+    &:nth-child(2):before {
+      background-color: $color-orange-500;
+    }
+  }
+}
+
+.stacked-active {
+  .recharts-tooltip-item {
+    &:nth-child(2):before {
+      background-color: $color-green-500;
+    }
+  }
+}
+
+.context-wrapper {
+  min-height: 130px;
+  position: relative;
+}
+
+.column-wrapper {
+  @include vertical-center;
+
+  position: absolute;
+  right: 0;
+}
+
+.main-context {
+  color: $color-primary-800;
+  flex: 1 1 auto;
+  position: relative;
+
+  .column {
+    border-right: 1px solid $color-gray-100;
+    display: inline-block;
+    padding: 0 15px;
+    text-align: right;
+
+    &:last-child {
+      border-right: none;
+      padding-right: 10px;
+    }
+  }
+}
+
+.customized-legend,
+.horizontal-customized-legend {
+  margin-left: 35px;
+  padding-top: 8px;
+  text-align: center;
+
+  .legend-title {
+    font: {
+      family: $font-family--primary;
+      size: 10px;
+    }
+
+    padding-left: 3px;
+  }
+
+  .legend-item {
+    color: $color-gray-600;
+    cursor: pointer;
+    margin-left: 15px;
+    user-select: none;
+  }
+
+  .legend-item-indicator {
+    border-bottom: 1px solid $color-primary-800;
+    color: $color-primary-800;
+    font-family: $font-family--primary;
+  }
+}
+
+.customized-legend {
+  margin: 0;
+  padding: 0;
+}
+
+.tab-menu-compare {
+  display: flex;
+  justify-content: center;
+  padding-left: 15px;
+
+  .text {
+    font-size: 10px;
+  }
+}
+
+.tab-group-bar {
+  border: 2px solid #ddd;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-top: 5px;
+
+  .tab-group-item {
+    .text {
+      &:hover {
+        &,
+        .material-icons {
+          color: $color-base-black;
+        }
+      }
+    }
+  }
+}
+
+.tooltip-progress {
+  border: 1px solid $color-base-white;
+  border-radius: 0;
+  box-shadow: $shadow-depth-3;
+  font-size: 10px;
+  opacity: 1 !important;
+  padding: 10px 15px;
+
+  &:after {
+    display: none;
+  }
+
+  .tooltip-label {
+    font-family: $font-family--bold;
+  }
+}
+
+.progress-context {
+  color: $color-primary-800;
+  font-size: 30px;
+  padding-top: 10px;
+  text-align: right;
+}
+
+.progress-wrapper {
+  border: 1px solid $color-primary-800;
+  margin-top: 16px;
+  width: 100%;
+
+  .progress-bar-cell {
+    background-color: $color-primary-800;
+    height: 16px;
+  }
+}
+
+.percentage-footer {
+  font-size: 10px;
+  padding-top: 8px;
+}
+
+.column,
+.progress-context {
+  .text {
+    &-abbr {
+      font-size: 16px;
+      padding-left: 10px;
+      padding-right: 5px;
+    }
+
+    &-unit {
+      font-size: 16px;
+      padding-left: 5px;
+    }
+
+    &-value {
+      font-size: 32px;
+    }
+
+    &-label {
+      font-size: 10px;
+      max-width: 105px;
+      text-align: right;
+    }
+  }
+}
+
+.custom-tooltip {
+  background-color: $color-base-white;
+  box-shadow: $shadow-depth-3;
+  min-width: 70px;
+  padding: 4px 8px;
+  position: relative;
+
+  .tooltip-label {
+    font: {
+      family: $font-family--bold;
+      size: 10px;
+    }
+  }
+
+  .tooltip-value {
+    font-size: 10px;
+    position: absolute;
+    right: 7px;
+  }
+
+  .tooltip-item {
+    margin-top: 6px;
+  }
+}
+
+.card-selection {
+  position: relative;
+}

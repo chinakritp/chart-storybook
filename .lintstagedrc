@@ -1,0 +1,5 @@
+{
+  "src/**/*.{json}": ["prettier --write", "git add"],
+  "src/**/*.{js,jsx}": ["prettier --write", "eslint", "git add"],
+  "src/**/*.{css,scss}": ["prettier --write", "stylelint", "git add"]
+}

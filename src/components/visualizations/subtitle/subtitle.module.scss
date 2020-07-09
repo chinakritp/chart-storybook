@@ -1,0 +1,49 @@
+@import '../../../scss/variables';
+
+.compareSubtitle {
+  > .subtitle {
+    display: inline-block;
+    padding: 10px 0;
+    text-align: center;
+    width: 50%;
+    + .subtitle {
+      color: $secondary--color;
+    }
+  }
+}
+
+.subtitle {
+  color: $primary--color;
+  font-size: 12px;
+  top: 0;
+
+  :global(.material-icons) {
+    color: inherit;
+    font-size: 14px;
+    margin: auto 1px auto 0;
+  }
+
+  &:global(.absolute) {
+    position: absolute;
+  }
+
+  .wrapper {
+    display: inline-flex;
+    vertical-align: middle;
+  }
+
+  .highlight {
+    font-family: $font-family--bold;
+    padding-right: 5px;
+  }
+
+  &.multipleLine .highlight {
+    display: block;
+  }
+}
+
+.seperatorSubtitle {
+  color: #4662cd;
+  font-size: 12px;
+  margin: 0 5px;
+}

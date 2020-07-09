@@ -1,0 +1,29 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins';
+
+.container {
+  margin-bottom: 25px;
+}
+
+.wrapper {
+  font: {
+    family: $font-family--primary;
+    size: 10px;
+  }
+
+  position: relative;
+}
+
+.tooltip {
+  margin: 15px;
+
+  .content {
+    background-color: #fff;
+    box-shadow: $shadow-depth-3;
+    padding: 8px;
+
+    .label {
+      font-family: $font-family--bold;
+    }
+  }
+}
