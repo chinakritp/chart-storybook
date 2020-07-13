@@ -1,0 +1,26 @@
+@import '../../../../scss/variables';
+@import '../../../../scss/mixins';
+
+.mainContent {
+  height: 140px;
+  padding-top: 8px;
+  text-align: center;
+
+  .icon {
+    &Display {
+      display: inline-block;
+      padding: 3px 0;
+      transition: 0.3s;
+    }
+
+    &Box {
+      @include generate-square(56px);
+      background: {
+        image: url('../../../../assets/images/icon-box.png');
+        position: center;
+        repeat: no-repeat;
+        size: 50px;
+      }
+    }
+  }
+}

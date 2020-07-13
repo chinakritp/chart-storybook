@@ -20,17 +20,19 @@
     "url": "https://bitbucket.org/truedmp/product-geo-maps"
   },
   "scripts": {
-    "build": "webpack --config webpack.prod.js --mode production",
+    "build-storybook": "build-storybook",
     "build:dev": "webpack --config webpack.dev.js --mode development",
-    "start": "webpack-dev-server --config webpack.dev.js --mode development --env.es6 --progress --hot",
-    "coverage": "nyc --reporter html --reporter cobertura --reporter json-summary npm test && nyc report",
+    "build:firebase": "npm run build & npm run deploy-firebase",
+    "build": "webpack --config webpack.prod.js --mode production",
     "clean": "rm -rf node_modules",
+    "coverage": "nyc --reporter html --reporter cobertura --reporter json-summary npm test && nyc report",
+    "deploy-firebase": "firebase deploy --only hosting:chart-storybook",
     "lint": "eslint -f json -o eslint_report.json . || true",
-    "test": "jest --verbose",
+    "start": "webpack-dev-server --config webpack.dev.js --mode development --env.es6 --progress --hot",
+    "storybook": "start-storybook -p 6006",
     "test:coverage": "jest --verbose --coverage",
     "test:watch": "npm test -- --watch",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "test": "jest --verbose"
   },
   "dependencies": {
     "@babel/cli": "7.7.7",

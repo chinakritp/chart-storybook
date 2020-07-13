@@ -1,11 +1,15 @@
 import React from 'react'
 
+import styles from './empty-data.module.scss'
+
 const EmptyDataTemplate = () => (
-  <div className="main-content">
-    <div className="icon-display">
-      <i className="icon-box" />
+  <div className={styles.mainContent}>
+    <div className={styles.iconDisplay}>
+      <i className={styles.iconBox} />
     </div>
-    <h3 className="chart-context">Selected area doesn&apos;t have enough information to display</h3>
+    <h3 className={styles.chartContext}>
+      Selected area doesn&apos;t have enough information to display
+    </h3>
   </div>
 )
 

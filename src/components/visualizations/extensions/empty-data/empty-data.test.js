@@ -16,6 +16,6 @@ describe('<EmptyDataTemplate />', () => {
 
     const wrapper = shallow(<EmptyDataTemplate {...props} />)
 
-    expect(wrapper.find('.chart-context')).toHaveText(expected.text)
+    expect(wrapper.find('.chartContext')).toHaveText(expected.text)
   })
 })
