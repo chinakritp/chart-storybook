@@ -3,6 +3,8 @@ import { addParameters } from '@storybook/client-api'
 
 import { withKnobs } from '@storybook/addon-knobs'
 
+import '../src/scss/style.scss'
+
 const customViewports = {
   geoPulse: {
     name: 'GeoPulse Card',

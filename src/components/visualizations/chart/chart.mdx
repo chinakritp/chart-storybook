@@ -1,4 +1,5 @@
-import { Preview, Story } from '@storybook/addon-docs/blocks'
+import { Preview, Props, Story } from '@storybook/addon-docs/blocks'
+import Chart from './chart'
 
 # Button
 
@@ -9,3 +10,5 @@ I can embed a story (but not define one, since this file should not contain a `M
 </Preview>
 
 And I can also embed arbitrary markdown & JSX in this file.
+
+<Props of={Chart} />

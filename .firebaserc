@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "gcp-analytics-platform-poc"
+  },
+  "targets": {
+    "gcp-analytics-platform-poc": {
+      "hosting": {
+        "chart-storybook": [
+          "chart-storybook"
+        ]
+      }
+    }
+  }
+}
