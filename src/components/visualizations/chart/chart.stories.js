@@ -1,6 +1,5 @@
 import React from 'react'
 import { number, boolean } from '@storybook/addon-knobs'
-import mdx from './chart.mdx'
 
 import Chart from './chart'
 
@@ -8,10 +7,6 @@ export default {
   title: 'Chart/Line',
   parameters: {
     component: Chart,
-    componentSubtitle: 'Subtitle',
-    docs: {
-      page: mdx,
-    },
   },
 }
 

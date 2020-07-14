@@ -31,9 +31,14 @@ span {
   font-family: $font-family--primary;
 }
 
-body {
+body:not(.sb-show-main) {
   margin: 0;
   overflow: hidden;
+}
+
+.sbdocs.sbdocs-preview {
+  margin: auto;
+  width: 320px;
 }
 
 // Performance Monitoring Wrapper
