@@ -1,14 +1,73 @@
 import { Preview, Props, Story } from '@storybook/addon-docs/blocks'
 import Chart from './chart'
+import img from '../../../assets/images/tooltip.png'
 
-# Button
+## Bar Chart
 
-I can embed a story (but not define one, since this file should not contain a `Meta`):
+
+
+### Overview
+* Bar chart uses bars to show comparisons between categories of data. 
+* Bar chart always have two axis. One axis will generally have numerical values, and the other will describe the types of categories being compared.
+* These bars can be displayed horizontally or vertically.
+### Use case include:
+* True Product usage
+* Monthly Data Usage
+* Mobile Banking Usage
+### Example of data structure
+##### Social Media
+Social Media &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | Counts &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+------------ | -------------
+Facebook  | 56,709  
+Instagram | 48,239
+Twitter | 35,419
+LinkedIn | 12,544
+Other  | 4,544
+
 
 <Preview>
   <Story id="chart-line--basic" />
 </Preview>
 
-And I can also embed arbitrary markdown & JSX in this file.
 
-<Props of={Chart} />
+### Sorting
+* Sort by Max to Min value
+```
+<BarChart-Social-Media />
+
+```
+* Sott by natural order e.g. age, number, price range
+```
+<BarChart-Age-Range />
+
+```
+
+
+### Anatomy
+
+
+<Story id="chart-line--basic" />
+
+* ** Visualisation Title **
+  * Titles should give users a clear overview of what a data visualisation is about
+  * Title should convey information and make a point
+  * Title should short as many as possible, could be two lines if necessary
+* ** Subtitle/Key metric ** 
+* ** Bar ** - Bar size represent value of data
+* ** Category Label ** - Show data type name or category name
+* ** Axis ** - Axis showing data type
+### Tooltip and value
+
+
+<img src={img} />
+
+* Tooltip can be shown Percentage and Absolute
+* How to display Absolute Value
+  * 0 - 999 
+  * 1K - 999K 
+  * Absolute Value can be shown one decimal e.g. 1.6K
+* Percentage display without decimal
+* Value can be both Percentage and Absolute
+* Multiple absolute value can be shown in tooltip 
+
+
