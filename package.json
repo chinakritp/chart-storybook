@@ -82,7 +82,7 @@
     "js-cookie": "2.2.1",
     "js-yaml-loader": "1.2.2",
     "jwt-decode": "2.2.0",
-    "lodash": "4.17.15",
+    "lodash": "4.17.19",
     "lodash.debounce": "4.0.8",
     "lodash.get": "4.4.2",
     "node-sass": "4.13.0",
