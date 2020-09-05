@@ -85,7 +85,7 @@
     "lodash": "4.17.15",
     "lodash.debounce": "4.0.8",
     "lodash.get": "4.4.2",
-    "node-sass": "4.13.0",
+    "node-sass": "4.14.1",
     "postcss-flexbugs-fixes": "4.1.0",
     "postcss-loader": "3.0.0",
     "postcss-preset-env": "6.7.0",
